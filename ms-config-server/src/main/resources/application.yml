@@ -9,7 +9,7 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/markmercado1/Actividad.git # repositorio
+          uri: https://github.com/markmercado1/ms-actividad.git # repositorio
           searchPaths:
             - config-data
             - config-data-empleo
