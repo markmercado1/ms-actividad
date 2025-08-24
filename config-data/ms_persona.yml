@@ -12,7 +12,7 @@ spring:
     database-platform: org.hibernate.dialect.MySQL8Dialect
 
 server:
-  port: 6161
+  port: 6262
 
 springdoc:
   api-docs:
