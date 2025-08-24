@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: ms-personasa
+  datasource:
+    url: jdbc:mysql://localhost:3309/cliente?serverTimezone=UTC
+    username: root
+    password: 124578369scar@
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+
+server:
+  port: 6161
+
+springdoc:
+  api-docs:
+    enabled: true
+  swagger-ui:
+    enabled: true
+    path: /doc/swagger-ui.html
