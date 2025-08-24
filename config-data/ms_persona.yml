@@ -1,6 +1,6 @@
 spring:
   application:
-    name: ms-personasa
+    name: ms-persona
   datasource:
     url: jdbc:mysql://localhost:3309/cliente?serverTimezone=UTC
     username: root
