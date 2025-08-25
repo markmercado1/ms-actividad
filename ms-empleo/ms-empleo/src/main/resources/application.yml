@@ -1,8 +1,8 @@
 spring:
   application:
-    name: lo que sea
+    name: ms_empleo
   profiles:
     active: development
   config:
-    import: configserver:http://root:123456@localhost:7070
+    import: optional:configserver:http://root:123456@localhost:7070
 
