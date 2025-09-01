@@ -22,4 +22,4 @@ spring:
         - id: ms-empleo
           uri: lb://ms-empleo
           predicates:
-            - Path=/empleo/**
+            - Path=/empleos/**
