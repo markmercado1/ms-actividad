@@ -10,7 +10,7 @@ import java.util.List;
 
 @RequiredArgsConstructor
 @RestController
-@RequestMapping("/persona")
+@RequestMapping("/personas")
 public class PersonaController {
 
     private final PersonaService personaService;

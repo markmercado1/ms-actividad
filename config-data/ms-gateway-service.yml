@@ -14,11 +14,11 @@ spring:
           enabled: true
       routes:
         - id: ms-empleo
-          uri: lb://MS-EMPLEO
+          uri: lb://ms-empleo
           predicates:
             - Path=/empleos/**
 
         - id: ms-persona
-          uri: lb://MS-PERSONA
+          uri: lb://ms-persona
           predicates:
             - Path=/personas/**
