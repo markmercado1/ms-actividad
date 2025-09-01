@@ -17,6 +17,7 @@ public class PersonaController {
 
     @GetMapping
     public ResponseEntity<List<Persona>> listar(){
+
         return ResponseEntity.ok().body(personaService.listar());
     }
 
