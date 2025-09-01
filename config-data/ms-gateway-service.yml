@@ -14,21 +14,17 @@ spring:
 
   cloud:
     gateway:
-      discovery:
-        locator:
-          enabled: true
-          lower-case-service-id: true
-      routes:
-        - id: ms-empleo
-          uri: lb://ms-empleo
-          predicates:
-            - Path=/empleos/**
-          filters:
-            - StripPrefix=1
-
-        - id: ms-persona
-          uri: lb://ms-persona
-          predicates:
-            - Path=/personas/**
-          filters:
-            - StripPrefix=1
+      server:
+        webflux:
+          discovery:
+            locator:
+              enabled: true
+              lower-case-service-id: true
+          routes:
+            - id: ms-empleo
+              uri: lb://ms-empleo
+              predicates:
+                - Path=/empleos/**
+              # Si tu servicio real no expone /categoria/...:
+              # filters:
+              #   - StripPrefix=1
