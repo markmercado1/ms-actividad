@@ -13,7 +13,7 @@ spring:
         locator:
           enabled: true
       routes:
-        - id: ms-catalogo
-          uri: lb://MS-EMPLEO
+        - id: ms-empleo
+          uri: lb://ms-empleo
           predicates:
             - Path=/empleos/**
