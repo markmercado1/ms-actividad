@@ -1,5 +1,7 @@
 package com.example.ms_empleo.controller;
 
+import com.example.ms_empleo.dto.EmpleoDto;
+import com.example.ms_empleo.dto.EmpleoRequest;
 import com.example.ms_empleo.models.Empleo;
 import com.example.ms_empleo.service.IEmpleoService;
 import lombok.RequiredArgsConstructor;
@@ -17,7 +19,7 @@ public class EmpleoController {
     private final IEmpleoService empleoService;
 
     @PostMapping
-    public ResponseEntity<Empleo> create(@RequestBody Empleo empleo) {
+    public ResponseEntity<EmpleoDto> create(@RequestBody EmpleoRequest empleo) {
         return ResponseEntity.ok(empleoService.save(empleo));
     }
 
@@ -27,10 +29,8 @@ public class EmpleoController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Empleo> getById(@PathVariable Long id) {
-        return empleoService.findById(id)
-                .map(ResponseEntity::ok)
-                .orElse(ResponseEntity.notFound().build());
+    public EmpleoDto getById(@PathVariable Long id) {
+        return empleoService.findById(id);
     }
 
     @PutMapping("/{id}")

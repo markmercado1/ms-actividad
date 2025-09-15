@@ -3,6 +3,7 @@ package com.example.ms_empleo.models;
 import jakarta.persistence.*;
 import lombok.*;
 
+
 @Entity
 @Table(name = "empleo")
 @Data
@@ -23,4 +24,8 @@ public class Empleo {
 
     @Column(nullable = false, length = 100)
     private String empresa;
+    private Long idPersona;
+
+
+
 }

@@ -32,6 +32,12 @@ public class PersonaController {
 
 
     }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<Persona> buscarPorId(@PathVariable Long id) {
+        Persona persona = personaService.buscarPorId(id);
+        return ResponseEntity.ok(persona);
+    }
     @DeleteMapping("/{id}")
     public String deleteById(@PathVariable(required = true) Long id){
         personaService.eliminarPorId(id);

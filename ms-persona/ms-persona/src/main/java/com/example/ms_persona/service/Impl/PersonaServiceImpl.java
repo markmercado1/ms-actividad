@@ -3,6 +3,7 @@ package com.example.ms_persona.service.Impl;
 import com.example.ms_persona.models.Persona;
 import com.example.ms_persona.repository.PersonaRepository;
 import com.example.ms_persona.service.PersonaService;
+import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -16,7 +17,11 @@ public class PersonaServiceImpl implements PersonaService {
     public List<Persona> listar() {
         return repository.findAll();
     }
-
+    @Override
+    public Persona buscarPorId(Long id) {
+        return repository.findById(id)
+                .orElseThrow(() -> new EntityNotFoundException("Persona no encontrada con id: " + id));
+    }
     @Override
     public Persona guardar(Persona persona) {
         return repository.save(persona);

@@ -10,6 +10,7 @@ public interface PersonaService {
     List<Persona> listar();
 
     Persona guardar(Persona persona);
+    Persona buscarPorId(Long id); // ← agregado
 
     Persona actualizar(Persona persona);
     Optional<Persona>listarPorId(Long id);
