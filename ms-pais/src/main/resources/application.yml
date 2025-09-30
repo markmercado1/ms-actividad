@@ -1,6 +1,6 @@
 spring:
   application:
-    name: ms_persona
+    name: ms-pais
   profiles:
     active: development
   config:
