@@ -28,7 +28,11 @@ public class PaisController {
 
     }
 
-
+    @GetMapping("/{id}")
+    public ResponseEntity<Pais> buscarPorId(@PathVariable Long id) {
+        Pais pais = paisService.buscarPorId(id);
+        return ResponseEntity.ok(pais);
+    }
     @DeleteMapping("/{id}")
     public String deleteById(@PathVariable(required = true) Long id){
         paisService.delete(id);

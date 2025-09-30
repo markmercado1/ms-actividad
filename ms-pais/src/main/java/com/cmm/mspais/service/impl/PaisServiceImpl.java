@@ -3,6 +3,7 @@ package com.cmm.mspais.service.impl;
 import com.cmm.mspais.models.Pais;
 import com.cmm.mspais.repository.PaisRepository;
 import com.cmm.mspais.service.PaisService;
+import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -19,7 +20,11 @@ public class PaisServiceImpl implements PaisService {
 
         return paisRepository.save(pais);
     }
-
+    @Override
+    public Pais buscarPorId(Long id) {
+        return paisRepository.findById(id)
+                .orElseThrow(() -> new EntityNotFoundException("Pais no encontrada con id: " + id));
+    }
     @Override
     public Pais actualizar(Long id, Pais pais) {
 

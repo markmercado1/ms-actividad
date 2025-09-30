@@ -2,7 +2,9 @@ package com.example.ms_empleo.service.impl;
 
 import com.example.ms_empleo.dto.EmpleoDto;
 import com.example.ms_empleo.dto.EmpleoRequest;
+import com.example.ms_empleo.dto.PaisDto;
 import com.example.ms_empleo.dto.PersonaDto;
+import com.example.ms_empleo.feign.PaisFeign;
 import com.example.ms_empleo.feign.PersonaFeign;
 import com.example.ms_empleo.models.Empleo;
 import com.example.ms_empleo.repository.EmpleoRepository;
@@ -20,6 +22,7 @@ public class EmpleoServiceImpl implements IEmpleoService {
 
     private final EmpleoRepository empleoRepository;
     private final PersonaFeign personaFeign;
+    private final PaisFeign paisFeign;
 
     @Override
     public EmpleoDto save(EmpleoRequest request) {
@@ -28,6 +31,10 @@ public class EmpleoServiceImpl implements IEmpleoService {
         if (persona == null) {
             throw new RuntimeException("La persona con id " + request.getIdPersona() + " no existe");
         }
+        PaisDto pais = paisFeign.buscarPorId(request.getIdPais()).getBody();
+        if (pais == null) {
+            throw new RuntimeException("El pais con id " + request.getIdPais() + " no existe");
+        }
 
         // Crear el empleo
         Empleo empleo = new Empleo();
@@ -35,6 +42,7 @@ public class EmpleoServiceImpl implements IEmpleoService {
         empleo.setSalario(request.getSalario());
         empleo.setEmpresa(request.getEmpresa());
         empleo.setIdPersona(request.getIdPersona());
+        empleo.setIdPais(request.getIdPais());
         empleoRepository.save(empleo);
 
         // Armar respuesta
@@ -44,7 +52,9 @@ public class EmpleoServiceImpl implements IEmpleoService {
         empleoDto.setSalario(empleo.getSalario());
         empleoDto.setEmpresa(empleo.getEmpresa());
         empleoDto.setIdPersona(empleo.getIdPersona());
-        empleoDto.setPersona(persona); // se incluye todo el body del otro microservicio
+        empleoDto.setPersona(persona);
+        empleoDto.setIdPais(empleo.getIdPais());
+        empleoDto.setPais(pais);// se incluye todo el body del otro microservicio
         return empleoDto;
     }
 
@@ -68,12 +78,14 @@ public class EmpleoServiceImpl implements IEmpleoService {
     public EmpleoDto findById(Long id) {
         Empleo empleo = empleoRepository.findById(id).get();
         PersonaDto personaDto = personaFeign.buscarPorId(empleo.getIdPersona()).getBody();
+        PaisDto paisDto= paisFeign.buscarPorId(empleo.getIdPais()).getBody();
         EmpleoDto empleoDto = new EmpleoDto();
         empleoDto.setIdEmpleo(empleo.getIdEmpleo());
         empleoDto.setEmpresa(empleo.getEmpresa());
         empleoDto.setSalario(empleo.getSalario());
         empleoDto.setPuesto(empleo.getPuesto());
         empleoDto.setPersona(personaDto);
+        empleoDto.setPais(paisDto);
         return empleoDto;
     }
     @Override

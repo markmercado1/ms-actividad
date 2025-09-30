@@ -10,6 +10,8 @@ public class EmpleoDto {
     private String empresa;
     private Long idPersona;
     private PersonaDto persona;
+    private Long idPais;
+    private PaisDto pais;
 
 
 

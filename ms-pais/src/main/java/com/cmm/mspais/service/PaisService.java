@@ -9,7 +9,7 @@ public interface PaisService {
     Pais guardar(Pais pais);
 
     Pais actualizar(Long id, Pais pais);
-
+    Pais buscarPorId(Long id);
     List<Pais> listar();
 
     void delete(Long id);

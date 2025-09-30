@@ -1,5 +1,6 @@
 package com.example.ms_empleo.models;
 
+import com.example.ms_empleo.dto.PaisDto;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -25,6 +26,7 @@ public class Empleo {
     @Column(nullable = false, length = 100)
     private String empresa;
     private Long idPersona;
+    private Long idPais;
 
 
 

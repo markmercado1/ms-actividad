@@ -7,5 +7,6 @@ public class EmpleoRequest {
     private String puesto;
     private Double salario;
     private String empresa;
-    private Long idPersona; // aquí llega la referencia
+    private Long idPersona;
+    private Long idPais;// aquí llega la referencia
 }
