@@ -11,7 +11,7 @@ spring:
       ddl-auto: update
     database-platform: org.hibernate.dialect.PostgreSQLDialect
 server:
-  port: 7569
+  port: 7570
 eureka:
   client:
     serviceUrl:
