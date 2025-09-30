@@ -1,0 +1,29 @@
+server:
+  port: 7569
+spring:
+  application:
+    name: ms-pais
+
+  datasource:
+    url: jdbc:mysql://localhost:3309/pais
+    username: root
+    password: 124578369scar@
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+springdoc:
+  api-docs:
+    enabled: true
+  swagger-ui:
+    enabled: true
+    path: /doc/swagger-ui.html
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8091/eureka
+  instance:
+    hostname: localhost
