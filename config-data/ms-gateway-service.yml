@@ -1,13 +1,13 @@
 server:
   port: 9090
-
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:8091/eureka
+      #defaultZone: http://localhost:8090/eureka
+      defaultZone: ${EUREKA_URI:http://localhost:8091/eureka}
   instance:
-    hostname: localhost
-
+    #hostname: localhost
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
 spring:
   application:
     name: ms-gateway-server
@@ -33,6 +33,3 @@ spring:
               uri: lb://ms-pais
               predicates:
                 - Path=/pais/**
-              # Si tu servicio real no expone /categoria/...:
-              # filters:
-              #   - StripPrefix=1

@@ -17,7 +17,7 @@ spring:
       path: /h2-console  # consola accesible en http://localhost:6263/h2-console
 
 server:
-  port: 6263
+  port: ${PORT:${SERVER_PORT:0}}
 
 springdoc:
   api-docs:
@@ -29,6 +29,6 @@ springdoc:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:8091/eureka
+      defaultZone: ${EUREKA_URI:http://localhost:8091/eureka}
   instance:
-    hostname: localhost
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
