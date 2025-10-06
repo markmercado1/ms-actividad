@@ -1,40 +1,36 @@
 server:
   port: 9090
-eureka:
-  client:
-    serviceUrl:
-      #defaultZone: http://localhost:8090/eureka
-      defaultZone: ${EUREKA_URI:http://localhost:8091/eureka}
-  instance:
-    #hostname: localhost
-    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+
 spring:
   application:
     name: ms-gateway-server
 
   cloud:
     gateway:
-      server:
-        webflux:
-          discovery:
-            locator:
-              enabled: true
-              lower-case-service-id: true
-          routes:
-            - id: ms-empleo
-              uri: lb://ms-empleo
-              predicates:
-                - Path=/empleos/**
-            - id: ms-persona
-              uri: lb://ms-persona
-              predicates:
-                - Path=/personas/**
-            - id: ms-pais
-              uri: lb://ms-pais
-              predicates:
-                - Path=/pais/**
-            - id: ms-auth-service
-              uri: lb://ms-auth-service
-              predicates:
-                - Path=/auth/**
-
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+      routes:
+        - id: ms-empleo
+          uri: lb://ms-empleo
+          predicates:
+            - Path=/empleos/**
+        - id: ms-persona
+          uri: lb://ms-persona
+          predicates:
+            - Path=/personas/**
+        - id: ms-pais
+          uri: lb://ms-pais
+          predicates:
+            - Path=/pais/**
+        - id: ms-auth-service
+          uri: lb://ms-auth-service
+          predicates:
+            - Path=/auth/**
+eureka:
+  client:
+    service-url:
+      defaultZone: ${EUREKA_URI:http://localhost:8091/eureka}
+  instance:
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}

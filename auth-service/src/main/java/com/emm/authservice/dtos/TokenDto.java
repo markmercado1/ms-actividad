@@ -1,4 +1,4 @@
-package com.emm.authservice.models;
+package com.emm.authservice.dtos;
 
 
 

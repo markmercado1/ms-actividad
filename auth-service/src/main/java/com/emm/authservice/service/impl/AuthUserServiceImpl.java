@@ -3,7 +3,7 @@ package com.emm.authservice.service.impl;
 
 import com.emm.authservice.dtos.AuthUserDto;
 import com.emm.authservice.models.AuthUser;
-import com.emm.authservice.models.TokenDto;
+import com.emm.authservice.dtos.TokenDto;
 import com.emm.authservice.repository.AuthUserRepository;
 import com.emm.authservice.security.JwtProvider;
 import com.emm.authservice.service.AuthUserService;
