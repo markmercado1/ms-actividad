@@ -1,7 +1,5 @@
 server:
-
   port: ${PORT:${SERVERS_PORT:0}}
-
 spring:
   jpa:
     hibernate.ddl-auto: update
@@ -12,12 +10,9 @@ spring:
     url: jdbc:mysql://localhost:3309/ms_auth
     username: root
     password: 124578369scar@
-
 eureka:
   client:
     serviceUrl:
-
-    defaultZone: ${EUREKA_URI:http://localhost:8091/eureka}
+      defaultZone: ${EUREKA_URI:http://localhost:8091/eureka}
   instance:
-
     instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
