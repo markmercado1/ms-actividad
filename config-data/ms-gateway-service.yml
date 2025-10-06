@@ -33,3 +33,8 @@ spring:
               uri: lb://ms-pais
               predicates:
                 - Path=/pais/**
+            - id: ms-auth-service
+              uri: lb://ms-auth-service
+              predicates:
+                - Path=/auth/**
+
