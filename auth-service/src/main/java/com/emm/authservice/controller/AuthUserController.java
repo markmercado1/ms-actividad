@@ -27,7 +27,9 @@ public class AuthUserController {
     public ResponseEntity<TokenDto> validate(@RequestParam String token) {
         TokenDto tokenDto = authUserService.validate(token);
         if (tokenDto == null)
-            return ResponseEntity.badRequest().build();
+            return ResponseEntity
+                .badRequest()
+                .body(new TokenDto("Token inválido o expirado"));
         return ResponseEntity.ok(tokenDto);
     }
     @GetMapping

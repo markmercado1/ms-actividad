@@ -5,11 +5,11 @@ import pe.edu.upeu.msauth.dto.TokenDto;
 import pe.edu.upeu.msauth.entity.AuthUser;
 
 public interface AuthUserService {
-    public AuthUser save(AuthUserDto authUserDto);
+     AuthUser save(AuthUserDto authUserDto);
 
 
-    public TokenDto login(AuthUserDto authUserDto);
+     TokenDto login(AuthUserDto authUserDto);
 
 
-    public TokenDto validate(String token);
+     TokenDto validate(String token);
 }

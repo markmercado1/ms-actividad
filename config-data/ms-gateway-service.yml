@@ -19,7 +19,8 @@ spring:
               uri: lb://ms-empleo
               predicates:
                 - Path=/empleos/**
-
+              filters:
+                - AuthFilter
             - id: ms-persona
               uri: lb://ms-persona
               predicates:
