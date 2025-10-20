@@ -1,5 +1,6 @@
 package com.example.ms_persona.service.Impl;
 
+import com.example.ms_persona.dtos.PersonaDTO;
 import com.example.ms_persona.models.Persona;
 import com.example.ms_persona.repository.PersonaRepository;
 import com.example.ms_persona.service.PersonaService;
@@ -22,9 +23,27 @@ public class PersonaServiceImpl implements PersonaService {
         return repository.findById(id)
                 .orElseThrow(() -> new EntityNotFoundException("Persona no encontrada con id: " + id));
     }
+    private PersonaDTO convertirADTO(Persona persona) {
+        PersonaDTO dto = new PersonaDTO();
+        dto.setIdPersona(persona.getIdPersona());
+        dto.setNombre(persona.getNombre());
+        dto.setDni(persona.getDni());
+        return dto;
+    }
+
+    private Persona convertirAEntity(PersonaDTO dto) {
+        Persona persona = new Persona();
+        persona.setNombre(dto.getNombre());
+        persona.setDni(dto.getDni());
+        return persona;
+    }
     @Override
-    public Persona guardar(Persona persona) {
-        return repository.save(persona);
+    public PersonaDTO guardar(PersonaDTO personaDTO) {
+        Persona persona = convertirAEntity(personaDTO);
+
+        Persona personaGuardada = repository.save(persona);
+
+        return convertirADTO(personaGuardada);
     }
 
     @Override

@@ -2,8 +2,6 @@ package com.example.ms_empleo.dto;
 import lombok.Data;
 @Data
 public class EmpleoDto {
-
-
     private Long idEmpleo;
     private String puesto;
     private Double salario;
@@ -12,7 +10,5 @@ public class EmpleoDto {
     private PersonaDto persona;
     private Long idPais;
     private PaisDto pais;
-
-
 
 }

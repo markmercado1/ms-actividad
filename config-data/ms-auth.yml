@@ -23,4 +23,4 @@ eureka:
     #hostname: localhost
     instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
 jwt:
-  secret: bSkDn96MR3RSaEZ0FKb+NNaxuSoP/kdlCOdgwvupXkk=
+  secret: iOp3zJH32+HqbtXwUVzZB68NEmzmyY8aZuvjBQEiVhI=
