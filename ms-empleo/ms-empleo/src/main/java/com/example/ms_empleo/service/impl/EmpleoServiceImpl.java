@@ -93,8 +93,8 @@ public class EmpleoServiceImpl implements IEmpleoService {
         return empleoRepository.findAll();
     }
     @Override
-    public void crearPerfilVacio(Long personaId, String nombre, String apellido) {
+    public void crearPerfilVacio(Long personaId, String nombre, String dni) {
         // Aquí podrías guardar un registro de empleo con datos vacíos iniciales
-        System.out.println("🧩 Creando perfil de empleo vacío para persona: " + nombre + " " + apellido);
+        System.out.println("Creando perfil de empleo vacío para persona: " + nombre + " " + dni);
     }
 }

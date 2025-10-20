@@ -13,5 +13,5 @@ public interface IEmpleoService {
     void delete(Long id);
     EmpleoDto findById(Long id);
     List<Empleo> findAll();
-    void crearPerfilVacio(Long personaId, String nombre, String apellido);
+    void crearPerfilVacio(Long personaId, String nombre, String dni);
 }
