@@ -14,8 +14,9 @@ public class PersonaCreadaListener {
 
     @KafkaListener(topics = "personas-topic", groupId = "empleo-group")
     public void escucharPersonaCreada(PersonaDto event) {
-        System.out.println("📥 Evento recibido en ms-empleo: " + event);
+        System.out.println("Evento recibido en ms-empleo: " + event);
         empleoService.crearPerfilVacio(event.getIdPersona(), event.getNombre(), event.getDni());
     }
+
 }
 
