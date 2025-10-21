@@ -5,19 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5f67dfa0-8d72-4e6c-acf6-e8f443c745ed" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../consumer/src/main/java/com/emm/backend/config/StringConsumerConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../consumer/src/main/java/com/emm/backend/listeners/StrConsumerListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../producer/src/main/java/com/emm/backend/config/KafkaAdminConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../producer/src/main/java/com/emm/backend/config/StringProducerFactoryConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../producer/src/main/java/com/emm/backend/controller/StringProducerController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../producer/src/main/java/com/emm/backend/service/StringProduceService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../auth-service/src/main/java/com/emm/authservice/security/JwtProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/../auth-service/src/main/java/com/emm/authservice/security/JwtProvider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../auth-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../auth-service/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../config-data/ms-auth-service.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../config-data/ms-auth-service.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../config-data/ms-auth.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../config-data/ms-auth.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ms-empleo/ms-empleo/src/main/java/com/example/ms_empleo/dto/EmpleoDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ms-empleo/ms-empleo/src/main/java/com/example/ms_empleo/dto/EmpleoDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ms-empleo/ms-empleo/src/main/java/com/example/ms_empleo/repository/EmpleoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ms-empleo/ms-empleo/src/main/java/com/example/ms_empleo/repository/EmpleoRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ms-gateway-server/src/main/java/com/example/msgatewayserver/config/AuthFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ms-gateway-server/src/main/java/com/example/msgatewayserver/config/AuthFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ms-empleo/ms-empleo/src/main/java/com/example/ms_empleo/service/impl/KafkaConsumerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../config-data/ms_empleo.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../config-data/ms_empleo.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ms-empleo/ms-empleo/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ms-empleo/ms-empleo/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ms-empleo/ms-empleo/src/main/java/com/example/ms_empleo/config/KafkaConsumerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ms-empleo/ms-empleo/src/main/java/com/example/ms_empleo/config/KafkaConsumerConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ms-persona/ms-persona/src/main/java/com/example/ms_persona/events/PersonaCreadaEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ms-persona/ms-persona/src/main/java/com/example/ms_persona/events/PersonaCreadaEvent.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,6 +86,7 @@
       <updated>1760929141303</updated>
       <workItem from="1760929142728" duration="3843000" />
       <workItem from="1760933094729" duration="53000" />
+      <workItem from="1760997581812" duration="137000" />
     </task>
     <servers />
   </component>
