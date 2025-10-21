@@ -1,4 +1,4 @@
-package com.example.ms_empleo.dto;
+package com.example.ms_empleo.events;
 
 import lombok.Data;
 

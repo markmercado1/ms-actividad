@@ -2,7 +2,7 @@ package com.example.ms_empleo.listeners;
 
 
 
-import com.example.ms_empleo.dto.PersonaCreadaEvent;
+import com.example.ms_empleo.events.PersonaCreadaEvent;
 import com.example.ms_empleo.service.IEmpleoService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.kafka.annotation.KafkaListener;

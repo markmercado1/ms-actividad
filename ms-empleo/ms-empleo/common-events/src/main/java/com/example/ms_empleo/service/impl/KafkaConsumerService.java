@@ -3,7 +3,7 @@ package com.example.ms_empleo.service.impl;
 
 
 
-import com.example.ms_empleo.dto.PersonaCreadaEvent;
+import com.example.ms_empleo.events.PersonaCreadaEvent;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Service;
@@ -12,31 +12,25 @@ import org.springframework.stereotype.Service;
 @Service
 public class KafkaConsumerService {
 
-    @KafkaListener(topics = "personas-topic", groupId = "empleo-group")
-    public void consumePersonaCreada(PersonaCreadaEvent event) {
-        log.info("Evento recibido - Persona creada: {}", event);
+    @KafkaListener(
+            topics = "personas-topic",
+            groupId = "persona-consumer-group"
+    )
+    public void consumirPersonaCreada(PersonaCreadaEvent event) {
+        log.info("========================================");
+        log.info("Evento recibido desde Kafka:");
+        log.info("ID Persona: {}", event.getIdPersona());
+        log.info("Nombre: {}", event.getNombre());
+        log.info("DNI: {}", event.getDni());
+        log.info("========================================");
 
-        // Aquí puedes procesar el evento según tus necesidades
-        // Por ejemplo: guardar en base de datos, enviar notificación, etc.
-
-        System.out.println("=== EVENTO PERSONA CREADA RECIBIDO ===");
-        System.out.println("ID Persona: " + event.getIdPersona());
-        System.out.println("Nombre: " + event.getNombre());
-        System.out.println("DNI: " + event.getDni());
-        System.out.println("=====================================");
-
-        // Ejemplo de lógica de negocio:
-        procesarPersonaParaEmpleo(event);
+        // Aquí puedes hacer lo que necesites con el evento
+        // Por ejemplo: guardar en otra BD, enviar notificación, etc.
+        procesarPersona(event);
     }
 
-    private void procesarPersonaParaEmpleo(PersonaCreadaEvent event) {
-        // Aquí implementas la lógica específica de tu microservicio empleo
-        // Por ejemplo:
-        // - Crear un perfil de empleo automáticamente
-        // - Asignar habilidades por defecto
-        // - Notificar a reclutadores
-        // - etc.
-
-        log.info("Procesando persona {} para módulo de empleo", event.getNombre());
+    private void procesarPersona(PersonaCreadaEvent event) {
+        // Tu lógica de negocio aquí
+        // Ejemplo: guardar en otra tabla, enviar email, etc.
     }
 }
