@@ -20,8 +20,8 @@ spring:
       key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
       value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
       properties:
-        spring.json.trusted.packages: "com.example.ms_persona.events,com.example.ms_persona.dtos"
-        spring.json.type.mapping: "personaCreadaEvent:com.example.ms_persona.events.PersonaCreadaEvent"
+        spring.json.trusted.packages: '*'
+        
 
 eureka:
   client:
