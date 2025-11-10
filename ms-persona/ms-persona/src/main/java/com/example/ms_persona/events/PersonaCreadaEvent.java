@@ -11,4 +11,5 @@ public class PersonaCreadaEvent {
     private Long idPersona;
     private String nombre;
     private String dni;
+
 }

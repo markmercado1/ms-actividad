@@ -17,4 +17,5 @@ public class KafkaProducerServiceImpl implements KafkaProducerService {
         kafkaTemplate.send(TOPIC, event);
         System.out.println("Evento persona.creada enviado: " + event);
     }
+
 }
