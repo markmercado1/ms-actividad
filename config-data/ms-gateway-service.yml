@@ -7,16 +7,6 @@ spring:
 
   cloud:
     gateway:
-      globals:
-        corsConfigurations:
-          '[/**]':
-            allowedOrigins: "http://localhost:4200"
-            allowedHeaders: "*"
-            allowedMethods:
-              - GET
-              - POST
-              - PUT
-              - DELETE
       discovery:
         locator:
           enabled: true
@@ -49,6 +39,20 @@ spring:
           predicates:
             - Path=/auth/**
           filters: []
+
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins:
+              - "http://localhost:4200"
+            allowedMethods:
+              - GET
+              - POST
+              - PUT
+              - DELETE
+              - OPTIONS
+            allowedHeaders: "*"
+            allowCredentials: true
 
 eureka:
   client:
