@@ -7,14 +7,11 @@ import java.util.List;
 import java.util.Optional;
 
 public interface PersonaService {
-
     List<Persona> listar();
-
-    PersonaDTO guardar(PersonaDTO persona);
-    Persona buscarPorId(Long id); // ← agregado
-
-    Persona actualizar(Persona persona);
-    Optional<Persona>listarPorId(Long id);
+    Persona buscarPorId(Long id);
+    PersonaDTO guardar(PersonaDTO personaDTO);
+    PersonaDTO actualizar(Long id, PersonaDTO personaDTO);
+    Optional<Persona> listarPorId(Long id);
     void eliminarPorId(Long id);
-
 }
+

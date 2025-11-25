@@ -27,18 +27,14 @@ spring:
           filters:
             - name: AuthFilter
 
-        - id: ms-pais
-          uri: lb://ms-pais
-          predicates:
-            - Path=/pais/**
-          filters:
-            - name: AuthFilter
+
 
         - id: ms-auth-service
           uri: lb://ms-auth-service
           predicates:
             - Path=/auth/**
           filters: []
+
 
       globalcors:
         corsConfigurations:

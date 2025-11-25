@@ -9,7 +9,7 @@ spring:
       value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
 
   datasource:
-    url: jdbc:h2:mem:cliente  # BD en memoria llamada "cliente"
+    url:      # BD en memoria llamada "cliente"
     driver-class-name: org.h2.Driver
     username: sa
     password:
